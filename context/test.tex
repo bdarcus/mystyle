@@ -1,0 +1,32 @@
+% using minion pro with hanging-hz, opticals and old-style figures on mkiv
+% engine=luatex
+
+\usetypescriptfile[type-optical]
+
+\usemodule[fullpage][style={margin,headings}]
+
+\setupfullpage [margin=1.75in]
+
+\definefontfeature
+   [default][default]
+   [mode=node,language=dflt,script=latn,onum=yes,tnum=yes,
+        expansion=quality,protrusion=quality]
+
+\usetypescript[minion]
+\setupbodyfont[minion]
+
+\definefontfeature[fnmark][sups=yes]
+\setupnote[footnote][textstyle=\setff{fnmark},align=hanging]
+
+\setuphead[title][align={flushright, nothyphenated, verytolerant}, style=\ss\sc]
+
+\setupalign[hz, hanging]
+
+\setupindenting[yes, medium, next]
+
+\starttext
+123456789 testing
+
+\input tufte
+\stoptext
+
